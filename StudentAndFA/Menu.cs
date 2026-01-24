@@ -17,6 +17,7 @@ namespace Student
                 StudentProcessing.DivisionIntoFields(parts, out string[] surnames, out string[] nameFaculty, out double[] grant, out uint[][] marks);
                 var person1 = new Student(surnames[0], nameFaculty[0], grant[0], marks[0]);
                 Console.WriteLine(person1);
+                Console.WriteLine("прайм");
             }
             catch(Exception ex)
             {
