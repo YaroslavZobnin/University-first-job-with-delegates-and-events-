@@ -1,18 +1,21 @@
-﻿namespace Student
+﻿using StudentAndFA;
+
+namespace StudentAndFa
 {
+    internal delegate void BonusEventHandler(double bonusGrant);
     internal class Student
     {
         private string? surname, nameFaculty;
         private double? grant;
         private uint[]? marks = new uint[5];
-
-        public bool isExcellentPupil
+        
+        public bool IsExcellentPupil
         {
            get
            {
                 if(marks != null)
                 {
-                    uint res = 0;
+                    float res = 0;
                     foreach (var mark in marks)
                         res += mark;
                     return res / 5 > 8 ? true : false;
@@ -46,6 +49,12 @@
             for (int i = 1; i < marks.Length; i++)
                 stringMark += ' ' + marks[i].ToString();
             return $"{surname}, {nameFaculty}, {grant}, {stringMark}";
+        }
+        public void AddingGrant(double bonusGrant) => grant += bonusGrant;
+        public void ChangingTheNameOfFaculty(object sender, EventArgs eventArgs)
+        {
+            if (sender is Faculty faculty)
+                nameFaculty = faculty.NameOfFaculty;
         }
     }
 }
