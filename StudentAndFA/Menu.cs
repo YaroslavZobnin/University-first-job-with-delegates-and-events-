@@ -12,7 +12,7 @@
                 var studentCollection = new ClassCollection<Student>();
                 studentCollection.AddNewElementsInClassCollection(StudentProcessing.CreatingStudents(surnames, nameOfFaculty, grant, marks));
 
-                parts = FacultyProcessing.TakingStringAboutFacultyFromFile("D:\\works\\2course_3semestr\\c#\\FirstLabFourthSemesterDelegateAndEvent\\YaroslavZobnin\\Laba1CSharpFourthSemesterSecondCourse\\StudentAndFA\\Faculty.txt");
+                parts = FacultyProcessing.TakingStringAboutFacultyFromFile("Faculty.txt");
                 FacultyProcessing.DividingFacultyInformationIntoFields(parts, out string[] dean, out string[] facultyName, out string[] phoneNumber);
 
                 var facultyCollection = new ClassCollection<Faculty>();
